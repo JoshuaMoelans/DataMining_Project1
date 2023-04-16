@@ -1,0 +1,29 @@
+People with higher incomes (more than 50K) are more likely to react positively to
+the special promotion; 10% of them is likely to accept the offer, whereas only 5% of
+the lower income people reacts positively.
+
+The average return of a new customer highly depends on his or her income.
+Higher income people tend to generate more revenue; on average the profit for a high income client is 980 Euro.
+Low income clients on the other hand, cost money on average; a low income customer will cost you on average 310 Euro.
+
+The cost of producing and mailing the promotional package is 10 Euro.
+
+-----------------------------------------------------------------------------------------------------------------------
+Sending only to higher income people:
+    - 10% chance of offer acceptance
+    - 980 Euro profit per customer
+    - 10 Euro cost per customer
+    --> x*(10%*980-10) = average of 88 profit per customer
+    --> example 1000 customers: 1000*(10%*980-10) = 88000 Euro
+
+Sending only to lower income people:
+    - 5% chance of offer acceptance
+    - -310 Euro profit per customer
+    - 10 Euro cost per customer
+    --> x*(5%*-310-10) = average of -25.5 profit per customer
+    --> example 1000 customers: 1000*(5%*-310-10) = -25500 Euro
+
+-----------------------------------------------------------------------------------------------------------------------
+Goal is to send ONLY to higher-income people; classifier should be very confident before sending the offer to a customer.
+
+very confident = high recall value, as our ROI = (88x-25.5(1-x))*y with x = recall and y = total positive predictions
